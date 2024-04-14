@@ -6,16 +6,19 @@ import { useState } from "react";
 
 const Card = () => {
   const [search, setSearch] = useState("");
-  let mydata=data;
+  const [mydata, setMydata] = useState(data);
 
   const handleSearch = (e) => {
     e.preventDefault();
     console.log(search);
-     mydata=data.filter((item) => {
-      return search.toLowerCase() === ""
-        ? item
-        : item.name.toLowerCase().includes(search);
-    });
+    setMydata(
+      data.filter((item) => {
+        return search.toLowerCase() === ""
+          ? item
+          : item.name.toLowerCase().includes(search);
+      })
+    );
+    console.log(mydata);
   };
   return (
     <>
