@@ -1,0 +1,22 @@
+.search {
+  float: right;
+  height: 50px;
+ 
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  border-radius: 5px;
+  /* border: none; */
+  padding: 8px;
+}
+.search-btn {
+ background-color: rgb(53, 219, 161);
+}
+.form {
+  display: flex;
+  gap: 30px;
+}

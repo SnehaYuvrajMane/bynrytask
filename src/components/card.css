@@ -1,0 +1,40 @@
+.card {
+  width: 280px;
+  height: 280px;
+  /* border: 1px solid red; */
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
+  align-items: center;
+  text-align: center;
+}
+.card-head {
+  display: flex;
+  flex-direction: column;
+   margin-top: 5px;
+  text-align: center;
+  align-items: center;
+}
+.card-head p {
+  font-size: 20px;
+  font-weight: 600;
+}
+.card-head img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.about {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  text-align: center;
+  align-items: center;
+}
+button {
+  width: 100px;
+  padding: 6px;
+  background-color: rgb(53, 219, 161);
+  border: none;
+  border-radius: 10px;
+}
