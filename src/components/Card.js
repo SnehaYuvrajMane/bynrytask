@@ -3,9 +3,11 @@ import "./card.css";
 import data from "./Data";
 import Navbar from "./Navbar";
 import { useState } from "react";
+import MapWithMarkers from "./Map";
 
 const Card = () => {
   const [search, setSearch] = useState("");
+  const [coOrdinates, setCoOrdinates] = useState();
   const [mydata, setMydata] = useState(data);
 
   const handleSearch = (e) => {
@@ -27,21 +29,35 @@ const Card = () => {
         setSearch={setSearch}
         handleSearch={handleSearch}
       />
-      {mydata.map((item, key) => {
-        return (
-          <div className="card" key={item.id}>
-            <div className="card-head">
-              <img src={item.photo} alt="" />
-              <p>{item.name}</p>
-            </div>
+      <div style={{ display: "flex", gap: "10px" }}>
+        <div
+          style={{
+            display: "flex",
+            gap: "10px",
+            width: "50%",
+            flexWrap: "wrap",
+          }}
+        >
+          {mydata.map((item, key) => {
+            return (
+              <div className="card" key={item.id}>
+                <div className="card-head">
+                  <img src={item.photo} alt="" />
+                  <p>{item.name}</p>
+                </div>
 
-            <div className="about">
-              <p>{item.brief}</p>
-              <button>{item.location}</button>
-            </div>
-          </div>
-        );
-      })}
+                <div className="about">
+                  <p>{item.brief}</p>
+                  <button onClick={() => setCoOrdinates(item.coOrdinates)}>
+                    {item.location}
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        {coOrdinates && <MapWithMarkers coOrdinates={coOrdinates} />}
+      </div>
     </>
   );
 };
