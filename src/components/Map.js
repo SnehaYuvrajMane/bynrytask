@@ -15,7 +15,7 @@ function MapWithMarkers({ coOrdinates }) {
       <MapContainer
         center={coOrdinates} // Center of the map
         zoom={5} // Initial zoom level
-        style={{ height: "400px", width: "400px" }} // Set the map's height and width
+        style={{ height: "700px", width: "600px" }} // Set the map's height and width
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" // Use OpenStreetMap tiles
